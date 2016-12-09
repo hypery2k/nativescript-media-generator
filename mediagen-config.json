@@ -1,0 +1,11 @@
+{
+    "mediaPath": "media",
+    "icon": {
+        "filename": "images/icon.png",
+        "background": "fff"
+    },
+    "splash": {
+        "filename": "images/splash.png",
+        "background": "fff"
+    }
+}

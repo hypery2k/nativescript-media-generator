@@ -1,0 +1,58 @@
+{
+    "name": "nativescript-media-generator",
+    "version": "0.1.0",
+    "description": "Generates NativeScript Media (Splashscreens, Icons,Images & Screenshots)",
+    "main": "tns-media-gen.js",
+    "scripts": {
+        "ios": "tns run ios --emulator --bundle",
+        "test": "npm run test-ios && npm run test-android",
+        "test-ios": "tns test ios --emulator --justlaunch",
+        "test-android": "tns test android --emulator --justlaunch --timeout 60000",
+        "tsc": "tsc",
+        "tslint": "tslint \"app/**/*.ts\""
+    },
+    "nativescript": {
+        "platforms": {
+            "ios": "1.1.0",
+            "android": "1.1.0"
+        }
+    },
+    "dependencies": {
+        "gm": "1.22.0",
+        "mkdirp": "0.5.1",
+        "phantom": "^0.7.2",
+        "phantomjs": "^1.9.20",
+        "q": "1.4.1"
+    },
+    "devDependencies": {
+        "chai": "2.3.0",
+        "chai-as-promised": "5.0.0",
+        "cross-env": "1.0.8",
+        "eslint": "3.7.1",
+        "eslint-loader": "1.5.0",
+        "eslint-plugin-es6-recommended": "0.1.2",
+        "eslint-plugin-import": "2.0.0",
+        "filewalker": "0.1.2",
+        "fs": "0.0.2",
+        "jasmine-core": "2.5.2",
+        "jasmine-node": "1.14.5",
+        "karma": "1.3.0",
+        "karma-jasmine": "1.0.2",
+        "karma-junit-reporter": "1.1.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/hypery2k/nativescript-media-generator.git"
+    },
+    "keywords": [
+        "NativeScript",
+        "icons",
+        "splash",
+        "screens",
+        "images"
+    ],
+    "author": "Martin Reinhardt",
+    "license": "MIT",
+    "bugs": "https://github.com/hypery2k/nativescript-media-generator/issues",
+    "homepage": "https://github.com/hypery2k/nativescript-media-generator"
+}

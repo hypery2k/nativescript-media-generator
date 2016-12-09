@@ -1,0 +1,7 @@
+.idea/
+app/
+node_modules/
+images/
+media/
+screenshots/
+Jenkinsfile
