@@ -1,7 +1,10 @@
 .idea/
+.tmp/
 app/
+dist/
 node_modules/
 images/
 media/
 screenshots/
+test/
 Jenkinsfile
