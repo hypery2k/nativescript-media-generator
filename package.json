@@ -5,7 +5,8 @@
   "main": "tns-media-gen.js",
   "scripts": {
     "build": "npm run eslint",
-    "test": "jasmine-node  --captureExceptions --color --junitreport --output dist/reports/ test/specs/",
+    "pretest":"mkdir -p app/App_Resources/iOS && mkdir -p app/App_Resources/android",
+    "test": "npm run pretest && jasmine-node  --captureExceptions --color --junitreport --output dist/reports/ test/specs/",
     "eslint": "eslint \"*.js\""
   },
   "nativescript": {
