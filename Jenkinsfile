@@ -3,7 +3,7 @@ properties properties: [
         [$class: 'GithubProjectProperty', displayName: '', projectUrlStr: 'https://github.com/hypery2k/nativescript-media-generator'],
 ]
 
-node {
+node('nativescript') {
     def buildNumber = env.BUILD_NUMBER
     def mvnHome = '/opt/dev/apache-maven-3.3.1'
     def workspace = env.WORKSPACE
@@ -26,9 +26,7 @@ node {
         }
 
         stage('Test') {
-            wrap([$class: 'Xvfb']) {
-                sh "npm run test"
-            junit 'dist/reports/TEST-*.xml'}Ï
+            sh "npm run test"
         }
 
         stage('Publish NPM snapshot') {
