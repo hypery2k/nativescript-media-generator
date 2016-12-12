@@ -1,5 +1,5 @@
 "use strict";
-var gm = require('gm').subClass({ imageMagick: true }),
+var gm = require('gm').subClass({imageMagick: true}),
   mkdirp = require('mkdirp'),
   path = require('path'),
   fs = require('fs'),
@@ -8,8 +8,6 @@ var gm = require('gm').subClass({ imageMagick: true }),
   config = require(process.cwd() + "/mediagen-config");
 
 var mediaPath = config.mediaPath || 'Media';
-
-
 
 
 function resize(width, height, bgColour, imagePath, outputFilename, outputPath) {
@@ -242,36 +240,36 @@ function generate() {
       };
 
       var storeImages = [
-        //Android Store Icons
-        {
-          width: 512,
-          height: 512,
-          path: "../../" + mediaPath + "/android/store",
-          filename: "512.png",
-          source: process.argv[2] || config.icon || config.image
-        }, {
-          width: 1024,
-          height: 500,
-          path: "../../" + mediaPath + "/android/store",
-          filename: "1024x500.png",
-          source: process.argv[2] || config.splash || config.image
-        }, {
-          width: 180,
-          height: 120,
-          path: "../../" + mediaPath + "/android/store",
-          filename: "180x120.png",
-          source: process.argv[2] || config.splash || config.image
-        },
+          //Android Store Icons
+          {
+            width: 512,
+            height: 512,
+            path: "../../" + mediaPath + "/android/store",
+            filename: "512.png",
+            source: process.argv[2] || config.icon || config.image
+          }, {
+            width: 1024,
+            height: 500,
+            path: "../../" + mediaPath + "/android/store",
+            filename: "1024x500.png",
+            source: process.argv[2] || config.splash || config.image
+          }, {
+            width: 180,
+            height: 120,
+            path: "../../" + mediaPath + "/android/store",
+            filename: "180x120.png",
+            source: process.argv[2] || config.splash || config.image
+          },
 
-        //Apple store icons
-        {
-          width: 1024,
-          height: 1024,
-          path: "../../" + mediaPath + "/ios/store",
-          filename: "1024x1024-AppIcon.jpg",
-          source: process.argv[2] || config.icon || config.image
-        }
-      ],
+          //Apple store icons
+          {
+            width: 1024,
+            height: 1024,
+            path: "../../" + mediaPath + "/ios/store",
+            filename: "1024x1024-AppIcon.jpg",
+            source: process.argv[2] || config.icon || config.image
+          }
+        ],
         splashImages = [
           //iOS Splash
           {
@@ -388,7 +386,7 @@ function generate() {
 
         ];
       var images = generateImageSets('icon.png', process.argv[2] || config.icon || config.image, 'AppIcon.appiconset')
-        // .concat(storeImages) // FIXME allow skip of store image
+      // .concat(storeImages) // FIXME allow skip of store image
         .concat(splashImages);
 
       if (config.screenshots && config.screenshots.length) {
@@ -398,7 +396,10 @@ function generate() {
 
       if (config.images) {
         config.images.forEach(function (item) {
-          images.push(generateImageSets(item.alias ? item.alias : item.filename, process.argv[2] || config.icon || config.image, 'AppIcon.appiconset'));
+          var additionalImages = generateImageSets(item.alias ? item.alias : item.filename, process.argv[2] || config.icon || config.image, 'AppIcon.appiconset');
+          additionalImages.forEach(function (additionalImage) {
+            images.push(additionalImage);
+          });
         });
       }
 
