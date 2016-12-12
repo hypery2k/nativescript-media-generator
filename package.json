@@ -1,11 +1,11 @@
 {
   "name": "nativescript-media-generator",
-  "version": "0.2.0",
+  "version": "0.2.0-5",
   "description": "Generates NativeScript Media (Splashscreens, Icons,Images & Screenshots)",
   "main": "tns-media-gen.js",
   "scripts": {
     "build": "npm run eslint",
-    "pretest":"mkdir -p app/App_Resources/iOS && mkdir -p app/App_Resources/android",
+    "pretest": "mkdir -p app/App_Resources/iOS && mkdir -p app/App_Resources/android",
     "test": "npm run pretest && jasmine-node  --captureExceptions --color --junitreport --output dist/reports/ test/specs/",
     "eslint": "eslint \"*.js\""
   },
