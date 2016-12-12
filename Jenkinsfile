@@ -26,7 +26,10 @@ node('nativescript') {
         }
 
         stage('Test') {
-            sh "npm run test"
+            wrap([$class: 'Xvfb']) {
+              sh "npm run test"
+              junit 'dist/reports/TEST-*.xml'
+            }
         }
 
         stage('Publish NPM snapshot') {
