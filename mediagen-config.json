@@ -1,28 +1,38 @@
 {
-    "icon": {
-        "filename": "icon.png",
-        "background": "fff"
+  "icon": {
+    "filename": "icon.png",
+    "background": "fff"
+  },
+  "splash": {
+    "filename": "splash.png",
+    "background": "fff"
+  },
+  "images": [
+    {
+      "filename": "icon.png",
+      "alias": "logo.png"
     },
-    "splash": {
-        "filename": "splash.png",
+    {
+      "filename": "icon.png",
+      "alias": "logo_login.png"
+    }
+  ],
+  "customImages": [
+    {
+      "width": 120,
+      "height": 120,
+      "path": "../../Media/custom",
+      "filename": "outputFilename.png",
+      "source": {
+        "filename": "image.png",
         "background": "fff"
-    },
-    "customImages": [
-        {
-            "width": 120,
-            "height": 120,
-            "path": "../../Media/custom",
-            "filename": "outputFilename.png",
-            "source": {
-                "filename": "image.png",
-                "background": "fff"
-            }
-        }
-    ],
-    "screenshots": [
-        {
-            "url": "http://www.google.com",
-            "name": "homepage"
-        }
-    ]
+      }
+    }
+  ],
+  "screenshots": [
+    {
+      "url": "http://www.google.com",
+      "name": "homepage"
+    }
+  ]
 }

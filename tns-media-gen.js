@@ -388,11 +388,19 @@ function generate() {
 
         ];
       var images = generateImageSets('icon.png', process.argv[2] || config.icon || config.image, 'AppIcon.appiconset')
-        .concat(storeImages).concat(splashImages);
+        // .concat(storeImages) // FIXME allow skip of store image
+        .concat(splashImages);
 
-      if (config.screenshots && config.screenshots.length)
+      if (config.screenshots && config.screenshots.length) {
         screenshots.pages = config.screenshots;
+      }
 
+
+      if (config.images) {
+        config.images.forEach(function (item) {
+          images.push(generateImageSets(item.alias ? item.alias : item.filename, process.argv[2] || config.icon || config.image, 'AppIcon.appiconset'));
+        });
+      }
 
       if (config.customImages) {
         config.customImages.forEach(function (item) {
