@@ -18,6 +18,7 @@ function resize(width, height, bgColour, imagePath, outputFilename, outputPath) 
       console.error("GM Error", error);
       deferred.reject(error);
     } else {
+
       // current image size
       var imageWidth = size.width;
       var imageHeight = size.height;
@@ -25,6 +26,10 @@ function resize(width, height, bgColour, imagePath, outputFilename, outputPath) 
         imageRatio = imageWidth / imageHeight;
       var image = this;
 
+      if (!isNaN(parseFloat(width))) {
+        var percentage = '' + width;
+        width = imageWidth * (parseInt(percentage.substring(0, percentage.indexOf("%")), 0)/100);
+      }
       // center placement
       if (ratio >= 1) {
         //Landscape or square
@@ -71,7 +76,7 @@ function resize(width, height, bgColour, imagePath, outputFilename, outputPath) 
   return deferred.promise;
 }
 
-function generateImageSets(filename, source, iOSPath) {/*eslint complexity: [error, 22]*/
+function generateIconSets(filename, source, iOSPath) {/*eslint complexity: [error, 22]*/
   return [
     //IOS Icons
     {
@@ -226,6 +231,57 @@ function generateImageSets(filename, source, iOSPath) {/*eslint complexity: [err
   ]
 }
 
+function generateImageSets(filename, source, iOSPath) {/*eslint complexity: [error, 22]*/
+  return [
+    //IOS Images
+    {
+      width: "21%",
+      path: 'iOS',
+      filename: filename.replace('.', '@1x.'),
+      source: source
+    }, {
+      width: "42%",
+      path: 'iOS',
+      filename: filename.replace('.', '@2x.'),
+      source: source
+    }, {
+      width: "63%",
+      path: 'iOS',
+      filename: filename.replace('.', '@3x.'),
+      source: source
+    },
+
+    //Android
+    {
+      width: "21%",
+      path: "Android/drawable-hdpi",
+      filename: filename,
+      source: source
+    }, {
+      width: "14%",
+      path: "Android/drawable-mdpi",
+      filename: filename,
+      source: source
+    }, {
+      width: "28%",
+      path: "Android/drawable-xhdpi",
+      filename: filename,
+      source: source
+    }, {
+      width: "42%",
+      path: "Android/drawable-xxhdpi",
+      filename: filename,
+      source: source
+    }, {
+      width: "100%",
+      path: "Android/drawable-xxxhdpi",
+      filename: filename,
+      source: source
+    }
+
+  ]
+}
+
 function generate() {
   var deferred = q.defer();
 
@@ -353,39 +409,34 @@ function generate() {
           },
           // Android
           {
-            width: 72,
-            height: 72,
+            width: "21%",
             path: "Android/drawable-hdpi",
             filename: "splash.png",
             source: process.argv[2] || config.splash || config.image
           }, {
-            width: 48,
-            height: 48,
+            width: "14%",
             path: "Android/drawable-mdpi",
             filename: "splash.png",
             source: process.argv[2] || config.splash || config.image
           }, {
-            width: 96,
-            height: 96,
+            width: "28%",
             path: "Android/drawable-xhdpi",
             filename: "splash.png",
             source: process.argv[2] || config.splash || config.image
           }, {
-            width: 144,
-            height: 144,
+            width: "42%",
             path: "Android/drawable-xxhdpi",
             filename: "splash.png",
             source: process.argv[2] || config.splash || config.image
           }, {
-            width: 345,
-            height: 345,
+            width: "100%",
             path: "Android/drawable-xxxhdpi",
             filename: "splash.png",
             source: process.argv[2] || config.splash || config.image
           }
 
         ];
-      var images = generateImageSets('icon.png', process.argv[2] || config.icon || config.image, 'AppIcon.appiconset')
+      var images = generateIconSets('icon.png', process.argv[2] || config.icon || config.image, 'AppIcon.appiconset')
       // .concat(storeImages) // FIXME allow skip of store image
         .concat(splashImages);
 
@@ -396,7 +447,7 @@ function generate() {
 
       if (config.images) {
         config.images.forEach(function (item) {
-          var additionalImages = generateImageSets(item.alias ? item.alias : item.filename, process.argv[2] || config.icon || config.image, 'AppIcon.appiconset');
+          var additionalImages = generateImageSets(item.alias ? item.alias : item.filename, process.argv[2] || config.icon || config.image);
           additionalImages.forEach(function (additionalImage) {
             images.push(additionalImage);
           });

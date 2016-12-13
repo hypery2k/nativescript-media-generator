@@ -78,16 +78,26 @@ It will create an example file called `mediagen-config.json` which you can now e
 
 ### Example `mediagen-config.json`
 ```javascript
-{    
-    "mediaPath": "media",
-    "icon": {"filename":"icon.png","background":"fff"},
-    "splash": {"filename":"splash.png","background":"fff"},
-    "customImages": [
-        {"width": 120, "height": 120, "path": "../Media/custom", "filename":"outputFilename.png", "source":{"filename":"image.png","background":"fff"}}
-    ],
-    "screenshots": [
-        {"url":"http://www.google.com", "name":"homepage"}
-    ]
+{
+  "mediaPath": "media",
+  "icon": {
+    "filename": "etc/images/icon.png",
+    "background": "fff"
+  },
+  "splash": {
+    "filename": "etc/images/splash.png",
+    "background": "fff"
+  },
+  "images": [
+    {
+      "filename": "icon.png",
+      "alias": "logo.png"
+    },
+    {
+      "filename": "icon.png",
+      "alias": "logo_login.png"
+    }
+  ]
 }
 ```
 
@@ -105,6 +115,9 @@ The config variables are below:
 - splash: splash image
     - filename: path to source filename
     - background: solid colour in hex
+- images: an array of images which should generate for both platforms
+    - filename: the output file name with extension
+    - alias to use (target filename)
 - custom images: an array of custom image objects for additional media if desired
     - width: the width of the image in pixels
     - height: the height of the image in pixels
