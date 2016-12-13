@@ -3,13 +3,13 @@ osx_image: xcode8
 sudo: false
 language: objective-c
 
-  matrix:
 env:
-  - NODE_VERSION="4" NPM_VERSION=3
-  - NODE_VERSION="5" NPM_VERSION=3
-  - NODE_VERSION="5" NPM_VERSION=4
-  - NODE_VERSION="6" NPM_VERSION=3
-  - NODE_VERSION="6" NPM_VERSION=4
+  matrix:
+    - NODE_VERSION="4" NPM_VERSION=3
+    - NODE_VERSION="5" NPM_VERSION=3
+    - NODE_VERSION="5" NPM_VERSION=4
+    - NODE_VERSION="6" NPM_VERSION=3
+    - NODE_VERSION="6" NPM_VERSION=4
 
 script:
   - npm install
