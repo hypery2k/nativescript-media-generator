@@ -115,7 +115,7 @@ The config variables are below:
 - splash: splash image
     - filename: path to source filename
     - background: solid colour in hex
-- images: an array of images which should generate for both platforms
+- images: an array of images which should generate for both platforms (**NOTE**: The biggest resolutution (100%) needed is 640dpi)
     - filename: the output file name with extension
     - alias to use (target filename)
 - custom images: an array of custom image objects for additional media if desired
