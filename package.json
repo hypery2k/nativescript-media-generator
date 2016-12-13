@@ -4,10 +4,19 @@
   "description": "Generates NativeScript Media (Splashscreens, Icons,Images & Screenshots)",
   "main": "tns-media-gen.js",
   "scripts": {
+    "clean": "rm -rf app/*",
     "build": "npm run eslint",
     "pretest": "mkdir -p app/App_Resources/iOS && mkdir -p app/App_Resources/android",
     "test": "npm run pretest && jasmine-node  --captureExceptions --color --junitreport --output dist/reports/ test/specs/",
-    "eslint": "eslint \"*.js\""
+    "eslint": "eslint \"*.js\"",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "changelog:add": "git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md'",
+    "release:pre": "npm run clean && npm run test",
+    "release:post": "npm run changelog && npm run changelog:add",
+    "release:major": "npm run release:pre && npm version major && npm run release:post && git push origin && git push origin --tags && npm publish",
+    "release:minor": "npm run release:pre && npm version minor && npm run release:post && git push origin && git push origin --tags && npm publish",
+    "release:patch": "npm run release:pre && npm version patch && npm run release:post && git push origin && git push origin --tags && npm publish"
+
   },
   "nativescript": {
     "platforms": {
@@ -26,6 +35,7 @@
     "q": "1.4.1"
   },
   "devDependencies": {
+    "conventional-changelog-cli": "1.2.0",
     "cross-env": "1.0.8",
     "eslint": "3.7.1",
     "eslint-loader": "1.5.0",
