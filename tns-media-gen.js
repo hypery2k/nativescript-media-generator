@@ -447,7 +447,7 @@ function generate() {
 
       if (config.images) {
         config.images.forEach(function (item) {
-          var additionalImages = generateImageSets(item.alias ? item.alias : item.filename, process.argv[2] || config.icon || config.image);
+          var additionalImages = generateImageSets(item.alias ? item.alias : item.filename, {filename:item.filename});
           additionalImages.forEach(function (additionalImage) {
             images.push(additionalImage);
           });
@@ -476,8 +476,6 @@ function generate() {
         screenshots.generateAll();
         images.forEach(function (image) {
           var background, sourceImage;
-
-
           if (process.argv[2]) {
             /*
              Legacy Configuration
