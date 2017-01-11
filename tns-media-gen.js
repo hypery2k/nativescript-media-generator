@@ -11,8 +11,9 @@ var mediaPath = config.mediaPath || 'Media';
 
 
 function resize(width, height, bgColour, imagePath, outputFilename, outputPath) {
-    var deferred = q.defer();
-    gm(path.join(process.cwd(), imagePath)).size(function(error, size) {
+    var deferred = q.defer(),
+        filepath = path.join(process.cwd(), imagePath);
+    gm(filepath).size(function(error, size) {
 
         if (error) {
             console.error("GM Error", error);
@@ -498,6 +499,7 @@ function generate() {
                     }
                     if (sourceImage) {
                         resize(image.width, image.height, '#' + background, sourceImage, image.filename, image.path);
+
                     }
                 });
                 deferred.resolve();
