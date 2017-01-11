@@ -1,6 +1,6 @@
 {
   "name": "nativescript-media-generator",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Generates NativeScript Media (Splashscreens, Icons,Images & Screenshots)",
   "main": "tns-media-gen.js",
   "scripts": {
