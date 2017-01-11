@@ -30,13 +30,13 @@
         "gm": "1.23.0",
         "mkdirp": "0.5.1",
         "path": "0.12.7",
-        "phantom": "2.1.21",
+        "phantom": "4.0.0",
         "q": "1.4.1"
     },
     "devDependencies": {
         "conventional-changelog-cli": "1.2.0",
-        "cross-env": "1.0.8",
-        "eslint": "3.12.1",
+        "cross-env": "3.1.4",
+        "eslint": "3.12.2",
         "eslint-loader": "1.5.0",
         "eslint-plugin-es6-recommended": "0.1.2",
         "eslint-plugin-import": "2.0.0",
