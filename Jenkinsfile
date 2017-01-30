@@ -8,7 +8,7 @@ node {
     def mvnHome = '/opt/dev/apache-maven-3.3.1'
     def workspace = env.WORKSPACE
     def buildUrl = env.BUILD_URL
-    env.PATH="${env.JAVA_HOME}/bin:${mvnHome}/bin:/var/lib/jenkins/.nvm/versions/node/v4.4.7/bin/"
+    env.PATH="${env.JAVA_HOME}/bin:${mvnHome}/bin:${env.PATH}"
 
     // PRINT ENVIRONMENT TO JOB
     echo "workspace directory is $workspace"
