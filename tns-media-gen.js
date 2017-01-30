@@ -236,17 +236,17 @@ function generateImageSets(filename, source, iOSPath) { /*eslint complexity: [er
     return [
         //IOS Images
         {
-            width: "21%",
+            width: "24.5%", // max 466
             path: 'iOS',
             filename: filename.replace('.', '@1x.'),
             source: source
         }, {
-            width: "42%",
+            width: "49%", // max 932
             path: 'iOS',
             filename: filename.replace('.', '@2x.'),
             source: source
         }, {
-            width: "63%",
+            width: "73.6%", // max 1398
             path: 'iOS',
             filename: filename.replace('.', '@3x.'),
             source: source
@@ -254,27 +254,27 @@ function generateImageSets(filename, source, iOSPath) { /*eslint complexity: [er
 
         //Android
         {
-            width: "21%",
+            width: "75%", // max 1425
             path: "Android/drawable-hdpi",
             filename: filename,
             source: source
         }, {
-            width: "14%",
+            width: "50%", // max 950
             path: "Android/drawable-mdpi",
             filename: filename,
             source: source
         }, {
-            width: "28%",
+            width: "100%", // max 1900
             path: "Android/drawable-xhdpi",
             filename: filename,
             source: source
         }, {
-            width: "42%",
+            width: "70%", // max 1331
             path: "Android/drawable-xxhdpi",
             filename: filename,
             source: source
         }, {
-            width: "100%",
+            width: "93.4%", // max 1775
             path: "Android/drawable-xxxhdpi",
             filename: filename,
             source: source
@@ -410,27 +410,28 @@ function generate() {
                     },
                     // Android
                     {
-                        width: "38%",
+                        width: 480,
+                        path: "Android/drawable-mdpi",
+                        filename: "splash.png",
+                        source: process.argv[2] || config.splash || config.image
+                    },
+                    {
+                        width: 800,
                         path: "Android/drawable-hdpi",
                         filename: "splash.png",
                         source: process.argv[2] || config.splash || config.image
                     }, {
-                        width: "25%",
-                        path: "Android/drawable-mdpi",
-                        filename: "splash.png",
-                        source: process.argv[2] || config.splash || config.image
-                    }, {
-                        width: "50%",
+                        width: 960,
                         path: "Android/drawable-xhdpi",
                         filename: "splash.png",
                         source: process.argv[2] || config.splash || config.image
                     }, {
-                        width: "75%",
+                        width: 1600,
                         path: "Android/drawable-xxhdpi",
                         filename: "splash.png",
                         source: process.argv[2] || config.splash || config.image
                     }, {
-                        width: "100%",
+                        width: 1920,
                         path: "Android/drawable-xxxhdpi",
                         filename: "splash.png",
                         source: process.argv[2] || config.splash || config.image
