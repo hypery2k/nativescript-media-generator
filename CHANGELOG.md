@@ -1,3 +1,14 @@
+<a name="0.2.3"></a>
+## [0.2.3](https://github.com/hypery2k/nativescript-media-generator/compare/v0.2.2...v0.2.3) (2017-01-30)
+
+
+### Bug Fixes
+
+* **node4:** Use older node for node4+ support ([a8ce11c](https://github.com/hypery2k/nativescript-media-generator/commit/a8ce11c))
+* **resizing:** Correct percentages for images ([27f7ad3](https://github.com/hypery2k/nativescript-media-generator/commit/27f7ad3))
+
+
+
 <a name="0.2.2"></a>
 ## [0.2.2](https://github.com/hypery2k/nativescript-media-generator/compare/v0.2.1...v0.2.2) (2017-01-11)
 
