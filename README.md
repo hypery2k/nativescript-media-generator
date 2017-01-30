@@ -42,7 +42,9 @@ Or if you want to use the development version (nightly build), which maybe not s
 tns plugin add nativescript-media-generator@next
 ```
 
-### example
+### Usage
+
+If using this plugin, we recommand an **1900x2850** Portrait Area as basis layout.
 
 ```bash
 $ tns-media-gen logo.jpg fff

@@ -238,7 +238,7 @@ function generateImageSets(filename, source, iOSPath) { /*eslint complexity: [er
         {
             width: "24.5%", // max 466
             path: 'iOS',
-            filename: filename.replace('.', '@1x.'),
+            filename: filename,
             source: source
         }, {
             width: "49%", // max 932
