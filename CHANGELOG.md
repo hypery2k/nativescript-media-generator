@@ -1,3 +1,15 @@
+<a name="0.2.4"></a>
+## [0.2.4](https://github.com/hypery2k/nativescript-media-generator/compare/v0.2.3...v0.2.4) (2017-03-02)
+
+
+### Bug Fixes
+
+* **build:** Fix build error ([4ce81ae](https://github.com/hypery2k/nativescript-media-generator/commit/4ce81ae))
+* **build:** Fix build error ([cbf9d82](https://github.com/hypery2k/nativescript-media-generator/commit/cbf9d82))
+* **cli:** Fix binary command error ([a54e067](https://github.com/hypery2k/nativescript-media-generator/commit/a54e067))
+
+
+
 <a name="0.2.3"></a>
 ## [0.2.3](https://github.com/hypery2k/nativescript-media-generator/compare/v0.2.2...v0.2.3) (2017-01-30)
 
