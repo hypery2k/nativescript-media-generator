@@ -1,4 +1,7 @@
+#!/usr/bin/env node
+
 "use strict";
+
 var gm = require('gm').subClass({ imageMagick: true }),
     mkdirp = require('mkdirp'),
     path = require('path'),
