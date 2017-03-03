@@ -8,10 +8,8 @@ var gm = require('gm').subClass({ imageMagick: true }),
     fs = require('fs'),
     screenshots = require('./screenshots'),
     q = require('q'),
-    config = require(process.cwd() + "/mediagen-config");
-
-var mediaPath = config.mediaPath || 'Media';
-
+    config,
+    mediaPath;
 
 function resize(width, height, bgColour, imagePath, outputFilename, outputPath) {
     var deferred = q.defer(),
@@ -547,9 +545,9 @@ function genConfig() {
     return deferred.promise;
 }
 
-
 try { /*eslint global-require: off*/
     config = require(process.cwd() + "/mediagen-config");
+    mediaPath = config.mediaPath || 'Media';
 } catch (e) {
     if (process.argv[2] !== "init") {
         console.log("Could not find configuration file. To create one run `$ mediagen init`");
