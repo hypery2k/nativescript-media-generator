@@ -41,7 +41,7 @@
     "conventional-changelog-cli": "1.2.0",
     "cross-env": "3.1.4",
     "eslint": "3.12.2",
-    "eslint-loader": "1.5.0",
+    "eslint-loader": "1.6.2",
     "eslint-plugin-es6-recommended": "0.1.2",
     "eslint-plugin-import": "2.0.0",
     "jasmine-node": "1.14.5"
