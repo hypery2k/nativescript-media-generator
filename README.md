@@ -1,5 +1,6 @@
 # NativeScript Media Generator
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/hypery2k/nativescript-media-generator.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/hypery2k/nativescript-media-generator.svg?branch=master)](https://travis-ci.org/hypery2k/nativescript-media-generator) [![npm version](https://badge.fury.io/js/nativescript-media-generator.svg)](http://badge.fury.io/js/nativescript-media-generator) [![Dependency Status](https://david-dm.org/hypery2k/nativescript-media-generator.svg)](https://david-dm.org/hypery2k/nativescript-media-generator) [![devDependency Status](https://david-dm.org/hypery2k/nativescript-media-generator/dev-status.svg)](https://david-dm.org/hypery2k/nativescript-media-generator#info=devDependencies) 
 
 [![Bountysource](https://www.bountysource.com/badge/tracker?tracker_id=11673029)](https://www.bountysource.com/trackers/11673029-hypery2k-nativescript-media-generatorerator?utm_source=11673029&utm_medium=shield&utm_campaign=TRACKER_BADGE) [![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=mreinhardt&url=https://github.com/hypery2k/nativescript-media-generator&title=badges&language=&tags=github&category=software)
