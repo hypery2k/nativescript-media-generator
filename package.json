@@ -34,6 +34,7 @@
     "gm": "1.23.0",
     "mkdirp": "0.5.1",
     "path": "0.12.7",
+    "phantom": "3.2.1",
     "phantomjs-prebuilt": "2.1.14",
     "q": "1.4.1"
   },
@@ -61,5 +62,10 @@
   "author": "Martin Reinhardt",
   "license": "MIT",
   "bugs": "https://github.com/hypery2k/nativescript-media-generator/issues",
-  "homepage": "https://github.com/hypery2k/nativescript-media-generator"
+  "homepage": "https://github.com/hypery2k/nativescript-media-generator",
+  "engine-strict": true,
+  "engines": {
+    "node": ">= 4.4",
+    "npm": ">= 3"
+  }
 }
