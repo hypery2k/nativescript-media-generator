@@ -8,7 +8,7 @@
   },
   "preferGlobal": true,
   "scripts": {
-    "clean": "rm -rf app/*",
+    "clean": "npm i rimraf && rimraf node_modules dist app && npm i",
     "build": "npm run eslint",
     "pretest": "mkdir -p app/App_Resources/iOS && mkdir -p app/App_Resources/android",
     "test": "npm run pretest && jasmine-node  --captureExceptions --color --junitreport --output dist/reports/ test/specs/",
@@ -28,13 +28,13 @@
     }
   },
   "dependencies": {
-    "async": "2.1.4",
-    "filewalker": "0.1.2",
+    "async": "2.1.5",
+    "filewalker": "0.1.3",
     "fs": "0.0.2",
     "gm": "1.23.0",
     "mkdirp": "0.5.1",
     "path": "0.12.7",
-    "phantom": "3.2.1",
+    "phantomjs-prebuilt": "2.1.14",
     "q": "1.4.1"
   },
   "devDependencies": {
@@ -44,7 +44,8 @@
     "eslint-loader": "1.5.0",
     "eslint-plugin-es6-recommended": "0.1.2",
     "eslint-plugin-import": "2.0.0",
-    "jasmine-node": "1.14.5"
+    "jasmine-node": "1.14.5",
+    "rimraf": "2.6.1"
   },
   "repository": {
     "type": "git",
