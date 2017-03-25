@@ -28,7 +28,7 @@
     }
   },
   "dependencies": {
-    "async": "2.1.4",
+    "async": "2.2.0",
     "filewalker": "0.1.2",
     "fs": "0.0.2",
     "gm": "1.23.0",
