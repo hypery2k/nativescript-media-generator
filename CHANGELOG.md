@@ -1,3 +1,21 @@
+<a name="1.0.0"></a>
+# [1.0.0](https://github.com/hypery2k/nativescript-media-generator/compare/v0.2.4...v1.0.0) (2018-01-08)
+
+
+### Bug Fixes
+
+* **config-error:** Resolve config not found error ([f2b6684](https://github.com/hypery2k/nativescript-media-generator/commit/f2b6684)), closes [#14](https://github.com/hypery2k/nativescript-media-generator/issues/14)
+* **convert-error:** Resolve resize error without giving width ([e73bed6](https://github.com/hypery2k/nativescript-media-generator/commit/e73bed6)), closes [#14](https://github.com/hypery2k/nativescript-media-generator/issues/14)
+* **node-env:** Correct command not found error ([4c264bc](https://github.com/hypery2k/nativescript-media-generator/commit/4c264bc)), closes [#14](https://github.com/hypery2k/nativescript-media-generator/issues/14)
+* **phantom-usage:** Use phantom 3.x to support node4+ ([2af5e89](https://github.com/hypery2k/nativescript-media-generator/commit/2af5e89))
+
+
+### Features
+
+* **iPhoneX:** Support for iPhone X ([2c46388](https://github.com/hypery2k/nativescript-media-generator/commit/2c46388))
+
+
+
 <a name="0.2.4"></a>
 ## [0.2.4](https://github.com/hypery2k/nativescript-media-generator/compare/v0.2.3...v0.2.4) (2017-03-02)
 
@@ -6,7 +24,7 @@
 
 * **build:** Fix build error ([4ce81ae](https://github.com/hypery2k/nativescript-media-generator/commit/4ce81ae))
 * **build:** Fix build error ([cbf9d82](https://github.com/hypery2k/nativescript-media-generator/commit/cbf9d82))
-* **cli:** Fix binary command error ([a54e067](https://github.com/hypery2k/nativescript-media-generator/commit/a54e067))
+* **cli:** Fix binary command error ([a54e067](https://github.com/hypery2k/nativescript-media-generator/commit/a54e067)), closes [#13](https://github.com/hypery2k/nativescript-media-generator/issues/13)
 
 
 
