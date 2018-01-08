@@ -39,7 +39,7 @@
     "mkdirp": "0.5.1",
     "path": "0.12.7",
     "phantom": "3.2.1",
-    "phantomjs-prebuilt": "2.1.14",
+    "phantomjs-prebuilt": "2.1.15",
     "q": "1.4.1"
   },
   "devDependencies": {
