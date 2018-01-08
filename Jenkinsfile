@@ -3,6 +3,9 @@ properties properties: [
         [$class: 'GithubProjectProperty', displayName: '', projectUrlStr: 'https://github.com/hypery2k/nativescript-media-generator'],
 ]
 
+@Library('mare-build-library')
+def nodeJS = new de.mare.ci.jenkins.NodeJS()
+
 node {
     def buildNumber = env.BUILD_NUMBER
     def branchName = env.BRANCH_NAME
@@ -19,26 +22,25 @@ node {
     echo "PATH is $env.PATH"
 
     try {
-        stage('Checkout') {
-            checkout scm
-        }
 
-        stage('Build') {
-            sh "npm install"
-        }
+      stage('Checkout') {
+          checkout scm
+      }
 
-        stage('Test') {
-            wrap([$class: 'Xvfb']) {
-              sh "npm run test"
-              junit 'dist/reports/TEST-*.xml'
-            }
-        }
+      stage('Build') {
+          sh "npm install"
+      }
 
-        stage('Publish NPM snapshot') {
-            def currentVersion = sh(returnStdout: true, script: "npm version | grep \"{\" | tr -s ':'  | cut -d \"'\" -f 4").trim()
-            def newVersion = "${currentVersion}-${branchName}-${buildNumber}"
-            sh "npm version ${newVersion} --no-git-tag-version && npm publish --tag next"
-        }
+      stage('Test') {
+          wrap([$class: 'Xvfb']) {
+            sh "npm run test"
+            junit 'dist/reports/TEST-*.xml'
+          }
+      }
+
+      stage('Publish NPM snapshot') {
+        nodeJS.publishSnapshot('src', buildNumber, branchName)
+      }
 
     } catch (e) {
         mail subject: "${env.JOB_NAME} (${env.BUILD_NUMBER}): Error on build", to: 'github@martinreinhardt-online.de', body: "Please go to ${env.BUILD_URL}."
