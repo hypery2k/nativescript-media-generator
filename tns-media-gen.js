@@ -32,9 +32,25 @@ function generate() {
 
             var storeImages = storeImagesGenerator(config, mediaPath),
                 splashImages = splashImagesGenerator(config, mediaPath),
-                images = generateIconSets('icon.png', process.argv[2] || config.icon || config.image, 'AppIcon.appiconset')
-                // .concat(storeImages) // FIXME allow skip of store image
-                .concat(splashImages);
+                source = process.argv[2] || config.icon || config.image,
+                images = generateIconSets('icon-20.png', source, 'AppIcon.appiconset')
+
+            images.push({
+                width: 1024,
+                height: 1024,
+                path: 'iOS/Assets.xcassets/AppIcon.appiconset',
+                filename: "icon-1024.png",
+                source: source
+            });
+            images.push({
+                width: 180,
+                height: 180,
+                path: 'iOS/Assets.xcassets/AppIcon.appiconset',
+                filename: "icon-60@3x.png",
+                source: source
+            });
+
+            images = images.concat(splashImages);
 
             if (config.screenshots && config.screenshots.length) {
                 screenshots.pages = config.screenshots;
