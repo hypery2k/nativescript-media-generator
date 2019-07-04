@@ -21,7 +21,9 @@
     "release:minor": "npm run release:pre && npm version minor && npm run release:post && git push origin && git push origin --tags && npm run version-and-push",
     "release:patch": "npm run release:pre && npm version patch && npm run release:post && git push origin && git push origin --tags && npm run version-and-push",
     "version-and-push": "git push origin && git push origin --tags && npm run merge-and-publish",
-    "merge-and-publish": "git checkout master && git merge develop && npm publish && git reset --hard && git clean -f"
+    "merge-and-publish": "git checkout master && git merge develop && npm publish && git reset --hard && git clean -f",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "nativescript": {
     "platforms": {
@@ -38,7 +40,8 @@
     "path": "0.12.7",
     "phantom": "4.0.12",
     "phantomjs-prebuilt": "2.1.16",
-    "q": "1.5.1"
+    "q": "1.5.1",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "conventional-changelog-cli": "1.3.12",
@@ -69,5 +72,6 @@
   "engines": {
     "node": ">= 4.4",
     "npm": ">= 3"
-  }
+  },
+  "snyk": true
 }
